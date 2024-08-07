@@ -1,0 +1,28 @@
+/* Luciole-100 - latin */
+@font-face {
+  font-family: 'Luciole';
+  font-style: normal;
+  src: local(''),
+       url('./fonts/Luciole-Regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/Luciole-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Luciole-100 - latin */
+@font-face {
+  font-family: 'Luciole';
+  font-style: bold;
+  font-weight: 100;
+  src: local(''),
+       url('./fonts/Luciole-Bold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/Luciole-Bold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* Luciole-100 - latin */
+@font-face {
+  font-family: 'Luciole';
+  font-style: italic;
+  font-weight: 100;
+  src: local(''),
+       url('./fonts/Luciole-Italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/Luciole-Italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
