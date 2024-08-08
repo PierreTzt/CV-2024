@@ -296,3 +296,30 @@ h1 {
     margin-right: 0;
   }
 }
+
+p + ul {
+  margin-top: 0px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 5px;
+}
+
+ul li::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 3px;
+  background-color: var(--kaki-green);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
