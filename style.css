@@ -324,13 +324,22 @@ ul li::before {
   transform: translateY(-50%);
 }
 
-.category {
-  width: 900px; /* Remplacez 200px par la largeur souhaitée */
-  margin-top: 50px;
+.category .experience .xp-years {
+  display: block;
+  width: 100%; /* Utilisez 100% pour que l'élément prenne toute la largeur disponible */
+  max-width: 200px; /* Limite la largeur maximale à 200px, ou toute autre valeur */
+  margin: 0 auto;
   padding: 20px;
-  background-color: #f4f4f4; /* Couleur de fond légère pour différencier les catégories */
+  box-sizing: border-box;
   border-radius: 8px;
-  
+  background-color: #f4f4f4; /* Couleur de fond légère pour différencier les catégories */
+}
+
+
+@media (min-width: 600px) {
+  .category .experience .xp-years {
+      width: 200px; /* Fixe la largeur lorsque l'écran est suffisamment large */
+  }
 }
 
 .category h2 {
