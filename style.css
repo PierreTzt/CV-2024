@@ -325,7 +325,7 @@ ul li::before {
 }
 
 .category {
-  width: 1000px; /* Remplacez 200px par la largeur souhaitée */
+  width: 900px; /* Remplacez 200px par la largeur souhaitée */
   margin-top: 50px;
   padding: 20px;
   background-color: #f4f4f4; /* Couleur de fond légère pour différencier les catégories */
