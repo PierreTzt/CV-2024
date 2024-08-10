@@ -323,3 +323,37 @@ ul li::before {
   top: 50%;
   transform: translateY(-50%);
 }
+
+.category {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f4f4f4; /* Couleur de fond légère pour différencier les catégories */
+  border-radius: 8px;
+}
+
+.category h2 {
+  color: var(--kaki-green); /* Couleur principale pour les titres de catégorie */
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.category .experience {
+  margin-bottom: 30px;
+}
+
+.category .experience h3 {
+  color: var(--infinite-green); /* Couleur pour les titres des projets */
+  font-size: 22px;
+  margin-top: 10;
+}
+
+.category .experience .xp-years {
+  font-size: 14px;
+  color: var(--pomme-green);
+}
+
+.category .experience p {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
