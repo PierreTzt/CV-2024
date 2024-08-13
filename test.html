@@ -4,6 +4,7 @@
     <title>Liste des Newsletters</title>
     <link rel="stylesheet" href="fonts.css" />
     <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
     <h1>Liste des Newsletters</h1>
@@ -31,10 +32,10 @@
                             let formattedDate = `${day}/${month}/${year}`;
                             let displayText = `Newsletter du ${formattedDate}`;
 
-                            // Create list item
+                            // Create list item with correct URL
                             let li = document.createElement('li');
                             let a = document.createElement('a');
-                            a.href = link.href;
+                            a.href = 'pages/' + filename;  // Corrected to point to the correct directory
                             a.textContent = displayText;
                             li.appendChild(a);
                             ul.appendChild(li);
