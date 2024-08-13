@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pierre Touzet - Newsletter</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <meta
+      name="description"
+      content="Je suis un passionné de technologie, de médias et de design graphique, particulièrement sur le web. Vous trouverez ici un aperçu de mes projets, qu'ils soient liés à mon travail, à mes loisirs ou à tout ce qui se trouve entre les deux."
+    />
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <dl class="contact-details">
+    <dt>E-mail</dt>
+      <dd><a href="mailto:bonjour@mecontacter.eu">bonjour@mecontacter.eu</a></dd>
+      <dt>CV</dt>
+      <dd><a href="cv.html">CV institutionnel</a></dd>
+      <dt>Bukket list</dt>
+      <dd><a href="bukketlist.html">The list</a></dd>
+      <dt>Newsletters</dt>
+      <dd><a href="newsletter.html">L'ensemble des newsletters</a></dd>
+    </dl>
+
+    <figure class="profile-picture">
+      <img src="./pierre.jpg" alt="Photo de portrait" width="186" height="186" />
+      <figcaption>J’ai 38 ans.</figcaption>
+    </figure>
+
+    <header>
+      <div class="stan-name">Bukket List</div>
+      <h1>Mon voyage de 38 ans commence ici</h1>
+      <p class="tagline">À 38 ans, j’ai décidé de me lancer dans une aventure unique : explorer de nouvelles expériences et relever des défis qui me tiennent à cœur. Je me donne une année pour réaliser un maximum de ces projets, tous pensés pour enrichir ma vie, élargir mes horizons et me pousser hors de ma zone de confort. Chaque projet est une occasion de grandir, d’apprendre et de savourer pleinement chaque moment. Cette année, je vais vivre intensément, une expérience à la fois.</p>
+    </header>
+
+    <!-- Section pour la première catégorie -->
+    <section class="category">
+        <h2>Liste des Newsletters</h2>
+          <article class="experience">
+            <div>
+              <p>
+                <ul id="newsletter-list"></ul>
+              </p>
+            </div>
+          </article>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('newsletter-blog/')
+                .then(response => response.text())
+                .then(data => {
+                    let parser = new DOMParser();
+                    let doc = parser.parseFromString(data, 'text/html');
+                    let links = doc.querySelectorAll('a');
+                    let ul = document.getElementById('newsletter-list');
+
+                    links.forEach(link => {
+                        let filename = link.textContent.trim();
+                        if (filename.endsWith('.html')) {
+                            // Extract date parts from the filename
+                            let day = filename.substring(0, 2);
+                            let month = filename.substring(2, 4);
+                            let year = filename.substring(4, 8);
+
+                            // Format the display text
+                            let formattedDate = `${day}/${month}/${year}`;
+                            let displayText = `Newsletter du ${formattedDate}`;
+
+                            // Create list item with correct URL
+                            let li = document.createElement('li');
+                            let a = document.createElement('a');
+                            a.href = 'newsletter-blog/' + filename;  // Corrected to point to the correct directory
+                            a.textContent = displayText;
+                            li.appendChild(a);
+                            ul.appendChild(li);
+                        }
+                    });
+                });
+        });
+    </script>
+</body>
+</html>
