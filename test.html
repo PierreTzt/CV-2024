@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Liste des pages</title>
+    <title>Liste des Newsletters</title>
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <ul id="page-list"></ul>
+    <h1>Liste des Newsletters</h1>
+    <ul id="newsletter-list"></ul>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -14,14 +17,25 @@
                     let parser = new DOMParser();
                     let doc = parser.parseFromString(data, 'text/html');
                     let links = doc.querySelectorAll('a');
-                    let ul = document.getElementById('page-list');
+                    let ul = document.getElementById('newsletter-list');
 
                     links.forEach(link => {
-                        if (link.href.endsWith('.html')) {
+                        let filename = link.textContent.trim();
+                        if (filename.endsWith('.html')) {
+                            // Extract date parts from the filename
+                            let day = filename.substring(0, 2);
+                            let month = filename.substring(2, 4);
+                            let year = filename.substring(4, 8);
+
+                            // Format the display text
+                            let formattedDate = `${day}/${month}/${year}`;
+                            let displayText = `Newsletter du ${formattedDate}`;
+
+                            // Create list item
                             let li = document.createElement('li');
                             let a = document.createElement('a');
                             a.href = link.href;
-                            a.textContent = link.textContent;
+                            a.textContent = displayText;
                             li.appendChild(a);
                             ul.appendChild(li);
                         }
